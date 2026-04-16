@@ -62,7 +62,7 @@ duration_seconds=$((end_time - start_time))
 ```bash
 -H "Content-Type: application/json" \
 -H "x-info: This-is-a-scanner-for-research" \
--H "x-email: researchwebconc1-at-gmail-dot-com" \
+-H "x-email: example1-at-gmail-dot-com" \
 -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 ```
 
@@ -74,7 +74,7 @@ Send the full introspection query from `skills/graphql-scanner/templates/introsp
 curl -s --max-time 30 -X POST "<ENDPOINT>" \
   -H "Content-Type: application/json" \
   -H "x-info: This-is-a-scanner-for-research" \
-  -H "x-email: researchwebconc1-at-gmail-dot-com" \
+  -H "x-email: example1-at-gmail-dot-com" \
   -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
   -d '{"query":"<INTROSPECTION_QUERY>"}'
 # requests_sent += 1
@@ -270,7 +270,7 @@ Test if the endpoint accepts queries via GET (enables CSRF attacks):
 curl -s --max-time 30 -G "<ENDPOINT>" \
   --data-urlencode 'query={ __typename }' \
   -H "x-info: This-is-a-scanner-for-research" \
-  -H "x-email: researchwebconc1-at-gmail-dot-com" \
+  -H "x-email: exmample1-at-gmail-dot-com" \
   -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 # requests_sent += 1
 ```
@@ -285,7 +285,7 @@ Test if APQ is enabled:
 curl -s --max-time 30 -X POST "<ENDPOINT>" \
   -H "Content-Type: application/json" \
   -H "x-info: This-is-a-scanner-for-research" \
-  -H "x-email: researchwebconc1-at-gmail-dot-com" \
+  -H "x-email: example1-at-gmail-dot-com" \
   -d '{"extensions":{"persistedQuery":{"version":1,"sha256Hash":"abc123"}}}'
 # requests_sent += 1
 ```
@@ -490,7 +490,7 @@ If the query has NO arguments, still request at least 3 fields from the return t
 curl -s --max-time 30 -X POST "<ENDPOINT>" \
   -H "Content-Type: application/json" \
   -H "x-info: This-is-a-scanner-for-research" \
-  -H "x-email: researchwebconc1-at-gmail-dot-com" \
+  -H "x-email: example1-at-gmail-dot-com" \
   -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
   -d '{"query":"query { <queryName>(<args>) { <fields> } }"}'
 # requests_sent += 1  
@@ -510,7 +510,7 @@ curl -s --max-time 30 -X POST "<ENDPOINT>" \
 curl -s --max-time 30 -X POST "<ENDPOINT>" \
   -H "Content-Type: application/json" \
   -H "x-info: This-is-a-scanner-for-research" \
-  -H "x-email: researchwebconc1-at-gmail-dot-com" \
+  -H "x-email: example1-at-gmail-dot-com" \
   -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
   -d '{"query":"query { <queryName>(<stringArg>: \"'"'"' OR 1=1--\") { id } }"}'
 # requests_sent += 1
@@ -567,7 +567,7 @@ Then build: `mutation { login(email: "test@test.com", password: "test") { token 
 curl -s --max-time 30 -X POST "<ENDPOINT>" \
   -H "Content-Type: application/json" \
   -H "x-info: This-is-a-scanner-for-research" \
-  -H "x-email: researchwebconc1-at-gmail-dot-com" \
+  -H "x-email: example1-at-gmail-dot-com" \
   -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
   -d '{"query":"mutation { <mutationName>(<args>) { <fields> } }"}'
 # requests_sent += 1
@@ -587,7 +587,7 @@ curl -s --max-time 30 -X POST "<ENDPOINT>" \
 curl -s --max-time 30 -X POST "<ENDPOINT>" \
   -H "Content-Type: application/json" \
   -H "x-info: This-is-a-scanner-for-research" \
-  -H "x-email: researchwebconc1-at-gmail-dot-com" \
+  -H "x-email: example1-at-gmail-dot-com" \
   -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
   -d '{"query":"mutation { <mutationName>(<stringArg>: \"'"'"' OR 1=1--\") { id } }"}'
 # requests_sent += 1
@@ -772,8 +772,7 @@ Save scan results to:
 `/home/openclaw/.openclaw/workspace/graphql_scans/{full_hostname}.json`
 
 Use the FULL hostname — everything before the first `/` after the protocol:
-- `https://edits.nationalmap.gov/apps/graphql` → `edits.nationalmap.gov.json`
-- `https://innovationpitch.uefa.com/graphql` → `innovationpitch.uefa.com.json`
+
 - `https://api.example.com/graphql` → `api.example.com.json`
 
 **Do NOT strip subdomains or TLDs.**
