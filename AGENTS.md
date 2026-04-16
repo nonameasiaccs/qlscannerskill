@@ -36,7 +36,7 @@ When user provides a GraphQL endpoint:
 2. **Record start time:** `start_time=$(date +%s)`
 3. **ALWAYS add these headers to EVERY request:**
    - `x-info: This-is-a-scanner-for-research`
-   - `x-email: researchwebconc1-at-gmail-dot-com`
+   - `x-email: example1-at-gmail-dot-com`
    - `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36`
 
 ### Step 2: Introspection (Phase 1)
@@ -81,7 +81,7 @@ When user provides a GraphQL endpoint:
    curl -s -X POST "<ENDPOINT>" \
      -H "Content-Type: application/json" \
      -H "x-info: This-is-a-scanner-for-research" \
-     -H "x-email: researchwebconc1-at-gmail-dot-com" \
+     -H "x-email: example1-at-gmail-dot-com" \
      -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
      -d '{"query":"query { <queryName>(<args>) { <fields> } }"}'
    # requests_sent += 1
@@ -111,7 +111,7 @@ When user provides a GraphQL endpoint:
     curl -s -X POST "<ENDPOINT>" \
       -H "Content-Type: application/json" \
       -H "x-info: This-is-a-scanner-for-research" \
-      -H "x-email: researchwebconc1-at-gmail-dot-com" \
+      -H "x-email: example-at-gmail-dot-com" \
       -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
       -d '{"query":"mutation { <mutationName>(<args>) { <fields> } }"}'
     # requests_sent += 1
@@ -228,7 +228,7 @@ When user provides a GraphQL endpoint:
 
 ### 1. Headers (EVERY request)
 - [ ] `x-info: This-is-a-scanner-for-research` included
-- [ ] `x-email: researchwebconc1-at-gmail-dot-com` included
+- [ ] `x-email: example-at-gmail-dot-com` included
 - [ ] `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36` included
 
 ### 2. No False Positives
@@ -297,7 +297,7 @@ When user provides a GraphQL endpoint:
 
 Add to EVERY request:
 - `x-info: This-is-a-scanner-for-research`
-- `x-email: researchwebconc1-at-gmail-dot-com`
+- `x-email: example-at-gmail-dot-com`
 - `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36`
 
 This identifies requests as legitimate security research and helps with responsible disclosure.
