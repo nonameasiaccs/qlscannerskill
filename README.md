@@ -60,6 +60,13 @@ The scanner executes in **four phases**:
 - **`skills/graphql-scanner`** — Complete scanner skill 
 
 ---
+## Prerequisites
+ 
+Before installing and using this GraphQL Scanner skill, make sure you have the following:
+ 
+- OpenClaw fully installed and configured.
+
+Note: If you haven't installed OpenClaw yet, please refer to the [official OpenClaw documentation](https://docs.openclaw.ai/start/getting-started)  for setup instructions first 
 
 ## Installation
 
